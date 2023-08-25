@@ -11,8 +11,11 @@ export const searchApi=createApi({
     endpoints:(builder)=>({
         getJobs:builder.query({
             query:(serachTerm)=>createRequest(`/search?query=${serachTerm}`)
+        }),
+        getJobsDetails:builder.query({
+            query:(job_id)=>createRequest(`/job-details?job_id=${job_id}`)
         })
     })
 })
 
-export const {useGetJobsQuery}=searchApi
+export const {useGetJobsQuery,useGetJobsDetailsQuery}=searchApi
