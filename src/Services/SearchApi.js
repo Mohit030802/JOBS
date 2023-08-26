@@ -14,8 +14,12 @@ export const searchApi=createApi({
         }),
         getJobsDetails:builder.query({
             query:(job_id)=>createRequest(`/job-details?job_id=${job_id}`)
-        })
+        }),
+        getEstimateSalary: builder.query({
+            query: ({ job_title, location, radius }) =>
+              `/estimated-salary?job_title=${job_title}&location=${location}&radius=${radius}`,
+          }),
     })
 })
 
-export const {useGetJobsQuery,useGetJobsDetailsQuery}=searchApi
+export const {useGetJobsQuery,useGetJobsDetailsQuery,useGetEstimateSalaryQuery}=searchApi
