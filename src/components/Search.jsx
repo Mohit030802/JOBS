@@ -40,7 +40,7 @@ const Search = () => {
 
                             <div key={job.job_id}>
 
-                                <div className="max-w-sm rounded-md items-stretch hover:scale-95 transition ease-linear duration-150 bg-[#F9F4F4] h-[95%] overflow-hidden shadow-md p-4 m-4 py-2">
+                                <div className="max-w-sm rounded-md items-stretch hover:scale-95 transition ease-linear duration-150 bg-[#F9F4F4] backdrop-filter backdrop-blur-lg  bg-opacity-80 h-[95%] overflow-hidden shadow-md p-4 m-4 py-2">
 
                                     <div className="px-6 py-4">
                                         <div className='flex justify-between items-center'>
