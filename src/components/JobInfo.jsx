@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useGetJobsDetailsQuery } from "../Services/SearchApi";
-
+import { Parallax } from "react-parallax";
+import img from '../assets/img2.jpg'
 const JobInfo = () => {
   const { job_id } = useParams();
   const { data: jobInfo } = useGetJobsDetailsQuery(job_id);
@@ -9,13 +10,15 @@ const JobInfo = () => {
 
   return (
     <>
-      <div className="  ">
+    <Parallax strength={600} bgImage={img} >
+      <div className="  " style={{ height: '100%' }}>
         <div className="flex justify-center items-center text-6xl font-serif underline underline-offset-2 p-2  m-4">
-          <h1>Job Details...</h1>
+          <h1 className="py-16">Job Details...</h1>
         </div>
+        
         {jobDetail?.map((job) => (
           <div key={job.job_id} className="flex">
-            <div className="bg-[#868484] w-[100vw] p-4 rounded-lg m-4">
+            <div className="bg-[#b09f9f] backdrop-filter backdrop-blur-lg  bg-opacity-0 w-[100vw] p-4 rounded-lg m-4">
               <div className="flex justify-center items-center space-x-4">
                 <img
                   className="mt-2 rounded-xl w-20 h-20"
@@ -25,6 +28,9 @@ const JobInfo = () => {
                 <h1 className="text-black font-bold text-5xl font-serif">
                   {job.employer_name}
                 </h1>
+              </div>
+              <div className="flex justify-center items-center text-center mt-4">
+                <p className="text-2xl font-semibold">{job.job_title}</p>
               </div>
               <hr className="m-8 border-2  border-gray-800"></hr>
               <div className="grid grid-cols-2">
@@ -162,6 +168,7 @@ const JobInfo = () => {
           </div>
         ))}
       </div>
+      </Parallax>
     </>
   );
 };

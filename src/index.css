@@ -4,7 +4,7 @@
 @tailwind utilities;
 @layer base {
     p {
-        font-family: Ubuntu;
+        font-family: Playfair Display;
     }
 }
 body::-webkit-scrollbar{

@@ -1,7 +1,7 @@
 import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
 const seachApiHeaders={
-    'x-rapidapi-key':'79d61ffe18msh14392944de1e02cp1b32d2jsn3bcfc9949a6b',
+    'x-rapidapi-key':'9bbe6702fdmshd37fafaff7447d5p1905d0jsna05aa1505902',
     'x-rapidapi-host':'jsearch.p.rapidapi.com'
 }
 const createRequest=(url)=>({url,headers:seachApiHeaders})
